@@ -1,0 +1,81 @@
+/* Custom Icon System - No CDN Dependencies */
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  font-style: normal;
+}
+
+.icon-home::before { content: "🏠"; }
+.icon-user-md::before { content: "👨‍⚕️"; }
+.icon-calendar-check::before { content: "📅"; }
+.icon-envelope::before { content: "✉️"; }
+.icon-stethoscope::before { content: "🩺"; }
+.icon-bars::before { content: "☰"; }
+.icon-sun::before { content: "☀️"; }
+.icon-moon::before { content: "🌙"; }
+.icon-heartbeat::before { content: "💓"; }
+.icon-search::before { content: "🔍"; }
+.icon-star::before { content: "⭐"; }
+.icon-map-marker-alt::before { content: "📍"; }
+.icon-calendar-plus::before { content: "📆"; }
+.icon-phone::before { content: "📞"; }
+.icon-clock::before { content: "🕐"; }
+.icon-shield-alt::before { content: "🛡️"; }
+.icon-tooth::before { content: "🦷"; }
+.icon-hand-holding-medical::before { content: "🫴"; }
+.icon-bone::before { content: "🦴"; }
+.icon-baby::before { content: "👶"; }
+.icon-brain::before { content: "🧠"; }
+.icon-chevron-left::before { content: "‹"; }
+.icon-chevron-right::before { content: "›"; }
+.icon-arrow-left::before { content: "←"; }
+.icon-check::before { content: "✓"; }
+.icon-times::before { content: "✕"; }
+.icon-edit::before { content: "✏️"; }
+.icon-calendar-times::before { content: "🚫"; }
+.icon-plus::before { content: "+"; }
+.icon-exclamation-triangle::before { content: "⚠️"; }
+.icon-paper-plane::before { content: "✈️"; }
+.icon-spinner::before { 
+  content: "⟲"; 
+  animation: spin 1s linear infinite;
+}
+.icon-sign-in-alt::before { content: "🔑"; }
+.icon-eye::before { content: "👁️"; }
+.icon-eye-slash::before { content: "🙈"; }
+.icon-sign-out-alt::before { content: "🚪"; }
+.icon-users::before { content: "👥"; }
+.icon-chart-bar::before { content: "📊"; }
+.icon-user::before { content: "👤"; }
+.icon-user-graduate::before { content: "🎓"; }
+.icon-user-plus::before { content: "👤+"; }
+.icon-history::before { content: "📜"; }
+.icon-notes-medical::before { content: "📝"; }
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Custom styled icons for better consistency */
+.icon-modern {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 2px;
+  font-size: 0.875em;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Navigation specific icons */
+.nav-icon-home::before { content: "⌂"; }
+.nav-icon-doctors::before { content: "⚕"; }
+.nav-icon-appointments::before { content: "📋"; }
+.nav-icon-contact::before { content: "💬"; }
+.nav-icon-login::before { content: "🔐"; }

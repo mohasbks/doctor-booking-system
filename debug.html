@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Console</title>
+</head>
+<body>
+    <h1>Debug Console for MediCare Elite</h1>
+    <script>
+        // Override console methods to capture errors
+        const originalError = console.error;
+        const originalWarn = console.warn;
+        const originalLog = console.log;
+        
+        const errors = [];
+        const warnings = [];
+        const logs = [];
+        
+        console.error = function(...args) {
+            errors.push(args.join(' '));
+            originalError.apply(console, args);
+            updateDisplay();
+        };
+        
+        console.warn = function(...args) {
+            warnings.push(args.join(' '));
+            originalWarn.apply(console, args);
+            updateDisplay();
+        };
+        
+        console.log = function(...args) {
+            logs.push(args.join(' '));
+            originalLog.apply(console, args);
+            updateDisplay();
+        };
+        
+        function updateDisplay() {
+            document.getElementById('errors').innerHTML = errors.map(e => `<div style="color: red; margin: 5px 0; padding: 5px; background: #ffebee;">${e}</div>`).join('');
+            document.getElementById('warnings').innerHTML = warnings.map(w => `<div style="color: orange; margin: 5px 0; padding: 5px; background: #fff3e0;">${w}</div>`).join('');
+        }
+        
+        // Check if main app loads
+        setTimeout(() => {
+            if (window.location.hostname === 'localhost') {
+                fetch('http://localhost:5173')
+                    .then(response => response.text())
+                    .then(html => {
+                        console.log('Main app loaded successfully');
+                    })
+                    .catch(error => {
+                        console.error('Failed to load main app:', error);
+                    });
+            }
+        }, 1000);
+    </script>
+    
+    <h2>Errors:</h2>
+    <div id="errors"></div>
+    
+    <h2>Warnings:</h2>
+    <div id="warnings"></div>
+    
+    <p>Open browser console (F12) to see real-time errors when testing the main app.</p>
+</body>
+</html>
