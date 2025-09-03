@@ -7,31 +7,38 @@ A modern, responsive web application for booking medical appointments with profe
 🏥 **Modern Interface** - Clean, professional design with dark mode support
 👨‍⚕️ **Doctor Directory** - Browse and search through qualified medical professionals
 📅 **Easy Booking** - Simple appointment scheduling system
-🩺 **Multiple Specialties** - Cardiology, Orthopedics, Dermatology, Neurology and more
-📱 **Mobile Responsive** - Works perfectly on all devices
-🌙 **Dark Mode** - Eye-friendly interface for any time of day
 
-## Technology Stack
+## Technologies Used
 
-- **Frontend**: Vue.js 3 with Composition API
-- **Styling**: Tailwind CSS
-- **Build Tool**: Vite
-- **Icons**: Unicode emoji and SVG icons
-- **State Management**: Vue Reactivity API
-- **Storage**: LocalStorage for preferences
+- Vue.js 3 (Composition API)
+- Vite
+- Tailwind CSS
+- JavaScript ES6+
+- LocalStorage for data persistence
 
-## Quick Start
+## Installation
 
 ```bash
 # Install dependencies
 npm install
 
-# Start development server
+# Run development server
 npm run dev
 
 # Build for production
 npm run build
+
+# Preview production build
+npm run preview
 ```
+
+## Deployment
+
+Ready for deployment on Vercel with included `vercel.json` configuration.
+
+## Author
+
+Created by mohasbks
 
 ## Live Demo
 
