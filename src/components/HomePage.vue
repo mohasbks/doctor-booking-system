@@ -198,7 +198,7 @@
         </div>
         
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div v-for="(specialty, index) in specialties" :key="specialty.name" 
+          <div v-for="(specialty, index) in specialtyCards" :key="specialty.name" 
                class="group cursor-pointer slide-in-up"
                :style="`animation-delay: ${index * 0.1}s`"
                @click="searchBySpecialty(specialty.name)">
@@ -208,7 +208,7 @@
               </div>
               <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-2">{{ specialty.name }}</h3>
               <p class="text-xs text-gray-500 dark:text-gray-400">
-                Expert care
+                {{ specialty.description }}
               </p>
             </div>
           </div>
@@ -400,6 +400,7 @@
 
 <script>
 import { ref, computed, onMounted } from 'vue'
+import { doctors, specialties, specialtyCards } from '../data/doctors.js'
 
 export default {
   name: 'HomePage',
@@ -522,6 +523,7 @@ export default {
       searchLocation,
       searchDoctor,
       specialties,
+      specialtyCards,
       quickSpecialties,
       getSpecialtyIcon,
       searchDoctors,
