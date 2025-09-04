@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Beautiful & Simple Hero Section -->
-    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <section class="relative h-screen flex items-center justify-center overflow-hidden overscroll-none">
       <!-- Clean Background -->
       <div class="absolute inset-0">
         <img src="/pexels-tara-winstead-7722680.jpg" alt="Medical Professional" class="w-full h-full object-cover">
@@ -16,7 +16,7 @@
         <div class="absolute top-1/3 right-1/4 w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay: 6s;"></div>
       </div>
       
-      <div class="relative max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 text-left md:text-center z-10">
+      <div class="relative max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 text-left md:text-center z-10 overflow-hidden">
         <div class="space-y-8">
           <!-- Badge -->
           <div class="inline-flex items-center bg-white/15 backdrop-blur-md rounded-full px-6 py-3 border border-white/30 shadow-xl fade-in-up" style="animation-delay: 0.2s;">
@@ -550,11 +550,39 @@ export default {
 
 /* Hero Buttons */
 .hero-btn-primary {
-  @apply bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl;
+  background: linear-gradient(to right, rgb(37 99 235), rgb(6 182 212));
+  color: white;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  transform: scale(1);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.hero-btn-primary:hover {
+  background: linear-gradient(to right, rgb(29 78 216), rgb(8 145 178));
+  transform: scale(1.05);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 }
 
 .hero-btn-secondary {
-  @apply bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-8 rounded-xl border border-white/30 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm shadow-xl hover:shadow-2xl;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  transform: scale(1);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.hero-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 }
 
 /* Smooth Animations */
@@ -572,6 +600,8 @@ export default {
   overflow: hidden;
   white-space: nowrap;
   border-right: 3px solid transparent;
+  max-width: 100%;
+  width: fit-content;
 }
 
 .typewriter-cursor, .typewriter-cursor-2 {
