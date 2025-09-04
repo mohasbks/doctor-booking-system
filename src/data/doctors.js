@@ -34,7 +34,7 @@ export const doctors = [
     name: "Dr. Emily Rodriguez",
     specialty: "Dermatology",
     location: "Skin Care Institute",
-    image: "https://images.unsplash.com/photo-1594824477987-6b22b7a38e80?w=200&h=200&fit=crop&crop=face&auto=format",
+    image: "https://thfvnext.bing.com/th/id/OIP.Gp8Q5NMxzOERyHouuxN0VAAAAA?w=173&h=180&c=7&r=0&o=7&cb=thfvnext&dpr=1.3&pid=1.7&rm=3",
     experience: "10 years",
     rating: 4.7,
     about: "Specializes in treating skin conditions, acne treatment, and cosmetic dermatology procedures.",
