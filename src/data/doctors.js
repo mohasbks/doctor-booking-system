@@ -34,7 +34,7 @@ export const doctors = [
     name: "Dr. Emily Rodriguez",
     specialty: "Dermatology",
     location: "Skin Care Institute",
-    image: "https://thfvnext.bing.com/th/id/OIP.Gp8Q5NMxzOERyHouuxN0VAAAAA?w=173&h=180&c=7&r=0&o=7&cb=thfvnext&dpr=1.3&pid=1.7&rm=3",
+    image: "https://doximity-res.cloudinary.com/images/f_auto,q_auto,t_profile_photo_320x320/mqamyxyt9hgnkc9dxrq2/emily-rodriguez-do-new-york-ny.jpg",
     experience: "10 years",
     rating: 4.7,
     about: "Specializes in treating skin conditions, acne treatment, and cosmetic dermatology procedures.",
@@ -131,4 +131,47 @@ export const specialties = [
   "Neurology",
   "Psychiatry",
   "Ophthalmology"
+]
+
+export const specialtyCards = [
+  {
+    name: "Cardiology",
+    icon: "❤️",
+    description: "Heart and cardiovascular care"
+  },
+  {
+    name: "Dentistry",
+    icon: "🦷",
+    description: "Dental and oral health"
+  },
+  {
+    name: "Dermatology",
+    icon: "✨",
+    description: "Skin and beauty care"
+  },
+  {
+    name: "Orthopedics",
+    icon: "🦴",
+    description: "Bone and joint care"
+  },
+  {
+    name: "Pediatrics",
+    icon: "👶",
+    description: "Children's healthcare"
+  },
+  {
+    name: "Neurology",
+    icon: "🧠",
+    description: "Brain and nervous system"
+  },
+  {
+    name: "Psychiatry",
+    icon: "🧘",
+    description: "Mental health and wellness"
+  },
+  {
+    name: "Ophthalmology",
+    icon: "👁️",
+    description: "Eye care and vision"
+  }
 ]
