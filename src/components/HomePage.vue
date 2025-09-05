@@ -1,61 +1,68 @@
 <template>
-  <div>
-    <!-- Beautiful & Simple Hero Section -->
-    <section class="relative h-screen flex items-center justify-center overflow-hidden overscroll-none">
-      <!-- Clean Background -->
+  <div class="homepage-container">
+    <!-- Enhanced Clean Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-blue-700 to-teal-600">
+      <!-- Enhanced Background -->
       <div class="absolute inset-0">
-        <img src="/pexels-tara-winstead-7722680.jpg" alt="Medical Professional" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/70 to-teal-900/80"></div>
+        <img src="/pexels-tara-winstead-7722680.jpg" alt="Medical Professional" class="w-full h-full object-cover opacity-40">
+        <div class="absolute inset-0 bg-gradient-to-t from-blue-900/60 via-transparent to-blue-800/40"></div>
       </div>
       
-      <!-- Subtle Background Pattern -->
-      <div class="absolute inset-0 opacity-10">
-        <div class="absolute top-20 left-20 w-1 h-1 bg-white rounded-full animate-twinkle"></div>
-        <div class="absolute top-40 right-32 w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay: 2s;"></div>
-        <div class="absolute bottom-32 left-1/4 w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay: 4s;"></div>
-        <div class="absolute top-1/3 right-1/4 w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay: 6s;"></div>
+      <!-- Simple decorative elements -->
+      <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-20 right-20 w-2 h-2 bg-white/20 rounded-full animate-pulse"></div>
+        <div class="absolute bottom-32 left-32 w-1 h-1 bg-teal-300/30 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
+        <div class="absolute top-1/2 right-1/3 w-1 h-1 bg-blue-200/25 rounded-full animate-pulse" style="animation-delay: 3s;"></div>
       </div>
       
-      <div class="relative max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 text-left md:text-center z-10 overflow-hidden">
-        <div class="space-y-8">
-          <!-- Badge -->
-          <div class="inline-flex items-center bg-white/15 backdrop-blur-md rounded-full px-6 py-3 border border-white/30 shadow-xl fade-in-up" style="animation-delay: 0.2s;">
-            <div class="w-2 h-2 bg-emerald-400 rounded-full mr-3 animate-pulse"></div>
-            <span class="text-white font-medium tracking-wide text-sm">✨ Premium Healthcare Excellence</span>
+      <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 py-10 sm:py-16 lg:py-20">
+        <div class="space-y-8 sm:space-y-10 lg:space-y-12">
+
+          <!-- Simplified Main Title Section -->
+          <div class="space-y-6 sm:space-y-8">
+            <div class="space-y-5 sm:space-y-6">
+              <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight min-h-[50px] sm:min-h-[70px] md:min-h-[90px] lg:min-h-[110px] break-words">
+                <span class="text-white">Welcome to </span>
+                <span class="typewriter-text" data-text="MediCare Pro">
+                  <span class="typewriter-cursor opacity-100 animate-pulse">|</span>
+                </span>
+              </h1>
+              <!-- Simple Decorative Line -->
+              <div class="flex justify-center">
+                <div class="w-20 sm:w-28 md:w-32 h-1 bg-gradient-to-r from-teal-400 to-blue-400 rounded-full"></div>
+              </div>
+            </div>
           </div>
           
-          <!-- Main Heading with Typewriter Animation -->
-          <div class="space-y-4">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white typewriter-text" data-text="Your Health is">
-              <span class="typewriter-cursor">|</span>
-            </h1>
-            <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent typewriter-text-2" data-text="Our Priority">
-              <span class="typewriter-cursor-2">|</span>
-            </h2>
+          <!-- Simplified Description Section -->
+          <div class="max-w-3xl mx-auto">
+            <p class="text-lg sm:text-xl md:text-2xl text-blue-50 leading-relaxed text-center font-light">
+              Connect with top-tier medical specialists. Book appointments instantly and receive premium care anytime, anywhere.
+            </p>
           </div>
           
-          <!-- Description -->
-          <p class="text-lg sm:text-xl md:text-2xl text-blue-100 max-w-3xl md:mx-auto leading-relaxed fade-in-up" style="animation-delay: 0.8s;">
-            Experience world-class healthcare with our network of board-certified specialists and cutting-edge medical technology
-          </p>
-          
-          <!-- Action Buttons -->
-          <div class="flex flex-col sm:flex-row gap-4 md:justify-center pt-8 fade-in-up" style="animation-delay: 1s;">
-            <button @click="$emit('navigate', 'doctors')" class="hero-btn-primary">
-              <span class="icon-user-md mr-2"></span>
+          <!-- Simple Action Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+            <button @click="$emit('navigate', 'doctors')" class="bg-white text-blue-600 hover:bg-blue-50 font-semibold py-4 px-8 rounded-xl text-lg transition-colors shadow-lg hover:shadow-xl flex items-center justify-center w-full sm:w-auto">
+              <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+              </svg>
               Find Specialists
             </button>
-            <button @click="$emit('navigate', 'appointments')" class="hero-btn-secondary">
-              <span class="icon-calendar-plus mr-2"></span>
-              Book Appointment
+            
+            <button @click="$emit('navigate', 'appointments')" class="bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 font-semibold py-4 px-8 rounded-xl text-lg transition-colors border border-white/30 hover:border-white/50 flex items-center justify-center w-full sm:w-auto">
+              <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+              Book Consultation
             </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Beautiful Search Section -->
-    <section class="py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50 dark:from-secondary-900 dark:via-blue-900 dark:to-cyan-900 relative overflow-hidden">
+    <!-- Mobile-Optimized Search Section -->
+    <section class="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50 dark:from-secondary-900 dark:via-blue-900 dark:to-cyan-900 relative overflow-hidden">
       <!-- Background Decorations -->
       <div class="absolute inset-0 opacity-30">
         <div class="absolute top-10 left-10 w-2 h-2 bg-blue-400 rounded-full animate-ping"></div>
@@ -65,32 +72,32 @@
       </div>
       
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        <div class="text-center mb-8 sm:mb-10 lg:mb-12">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 px-4">
             Find Your Doctor
           </h2>
-          <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4">
             Search and book appointments with qualified medical professionals
           </p>
         </div>
         
-        <!-- Simple Search Card -->
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 max-w-4xl mx-auto">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Specialty Selection -->
-            <div>
+        <!-- Mobile-Optimized Search Card -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-4 sm:p-6 max-w-4xl mx-auto">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <!-- Mobile-Optimized Specialty Selection -->
+            <div class="sm:col-span-2 lg:col-span-1">
               <label class="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2">
                 Specialty
               </label>
-              <select v-model="searchSpecialty" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+              <select v-model="searchSpecialty" class="w-full p-3 sm:p-4 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-base appearance-none">
                 <option value="">All Specialties</option>
-                <option v-for="specialty in specialties" :key="specialty" :value="specialty">
-                  {{ specialty }}
+                <option v-for="specialty in specialties" :key="specialty.name" :value="specialty.name">
+                  {{ specialty.icon }} {{ specialty.name }}
                 </option>
               </select>
             </div>
             
-            <!-- Location Input -->
+            <!-- Mobile-Optimized Location Input -->
             <div>
               <label class="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2">
                 Location
@@ -99,34 +106,37 @@
                 v-model="searchLocation" 
                 type="text" 
                 placeholder="Enter city or area" 
-                class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors placeholder-gray-400 dark:placeholder-gray-500"
+                class="w-full p-3 sm:p-4 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors placeholder-gray-400 dark:placeholder-gray-500 text-base"
               />
             </div>
             
-            <!-- Search Button -->
-            <div class="flex items-end">
+            <!-- Mobile-Optimized Search Button -->
+            <div class="flex items-end sm:col-span-2 lg:col-span-1">
               <button 
                 @click="searchDoctors" 
-                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200"
+                class="w-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold py-3 sm:py-4 px-6 rounded-xl transition-colors duration-200 text-base min-h-[52px] flex items-center justify-center"
               >
+                <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
                 Search Doctors
               </button>
             </div>
           </div>
         </div>
         
-        <!-- Quick Specialty Cards -->
-        <div class="mt-12">
-          <h3 class="text-xl font-semibold text-center mb-6 text-gray-900 dark:text-white">
+        <!-- Mobile-Optimized Quick Specialty Cards -->
+        <div class="mt-10 sm:mt-12">
+          <h3 class="text-lg sm:text-xl font-semibold text-center mb-4 sm:mb-6 text-gray-900 dark:text-white px-4">
             Popular Specialties
           </h3>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
             <div v-for="specialty in quickSpecialties" :key="specialty" 
                  @click="searchBySpecialty(specialty)"
-                 class="bg-white dark:bg-gray-800 rounded-lg p-4 text-center cursor-pointer hover:shadow-md hover:-translate-y-1 transition-all duration-200 border border-gray-100 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-600"
+                 class="bg-white dark:bg-gray-800 rounded-xl p-3 sm:p-4 text-center cursor-pointer hover:shadow-md hover:-translate-y-1 transition-all duration-200 border border-gray-100 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-600 active:scale-95 min-h-[80px] flex flex-col justify-center"
             >
-              <div class="text-2xl mb-2">{{ getSpecialtyIcon(specialty) }}</div>
-              <h4 class="font-medium text-gray-900 dark:text-white text-sm">{{ specialty }}</h4>
+              <div class="text-xl sm:text-2xl mb-1 sm:mb-2">{{ getSpecialtyIcon(specialty) }}</div>
+              <h4 class="font-medium text-gray-900 dark:text-white text-xs sm:text-sm leading-tight">{{ specialty }}</h4>
             </div>
           </div>
         </div>
@@ -399,8 +409,7 @@
 </template>
 
 <script>
-import { ref, computed, onMounted } from 'vue'
-import { doctors, specialties, specialtyCards } from '../data/doctors.js'
+import { ref, onMounted, computed } from 'vue'
 
 export default {
   name: 'HomePage',
@@ -438,12 +447,25 @@ export default {
     }
 
     const searchDoctors = () => {
+      // Store search criteria in localStorage
+      const searchCriteria = {
+        specialty: searchSpecialty.value,
+        location: searchLocation.value,
+        doctor: searchDoctor.value
+      }
+      localStorage.setItem('searchCriteria', JSON.stringify(searchCriteria))
       emit('navigate', 'doctors')
     }
 
     const searchBySpecialty = (specialty) => {
-      console.log('Searching by specialty:', specialty)
-      localStorage.setItem('selectedSpecialty', specialty)
+      // Set the selected specialty and store in localStorage
+      searchSpecialty.value = specialty
+      const searchCriteria = {
+        specialty: specialty,
+        location: '',
+        doctor: ''
+      }
+      localStorage.setItem('searchCriteria', JSON.stringify(searchCriteria))
       emit('navigate', 'doctors')
     }
 
@@ -497,25 +519,25 @@ export default {
     }
 
     onMounted(() => {
-      // Start typewriter animations
+      observeElements()
+      
+      // Start typewriter animations with delays
       setTimeout(() => {
-        const text1 = document.querySelector('.typewriter-text')
-        if (text1) {
-          typeWriter(text1, 'Your Health is', 80)
+        const titleElement = document.querySelector('.typewriter-text')
+        const titleCursor = document.querySelector('.typewriter-cursor')
+        if (titleElement && titleCursor) {
+          typeWriter(titleElement, 'Elite Medical Excellence', 80)
         }
       }, 1000)
-
+      
       setTimeout(() => {
-        const text2 = document.querySelector('.typewriter-text-2')
-        if (text2) {
-          typeWriter(text2, 'Our Priority', 80)
+        const subtitleElement = document.querySelector('.typewriter-text-2')
+        const subtitleCursor = document.querySelector('.typewriter-cursor-2')
+        if (subtitleElement && subtitleCursor) {
+          subtitleCursor.style.opacity = '1'
+          typeWriter(subtitleElement, 'Transforming Lives Through Exceptional Care', 70)
         }
-      }, 3000)
-
-      // Initialize scroll animations
-      setTimeout(() => {
-        observeElements()
-      }, 500)
+      }, 4000)
     })
 
     return {
@@ -523,7 +545,6 @@ export default {
       searchLocation,
       searchDoctor,
       specialties,
-      specialtyCards,
       quickSpecialties,
       getSpecialtyIcon,
       searchDoctors,
@@ -536,6 +557,14 @@ export default {
 </script>
 
 <style scoped>
+/* Homepage Container - Prevent Scrollbar Issues */
+.homepage-container {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
 /* Hero Section Animations */
 .fade-in-up {
   opacity: 0;
