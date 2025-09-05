@@ -1,24 +1,30 @@
 <template>
-  <div class="py-12 bg-gradient-to-b from-secondary-50 to-white dark:from-secondary-900 dark:to-secondary-800 min-h-screen">
+  <div class="py-8 sm:py-12 lg:py-16 bg-gradient-to-br from-slate-50 via-blue-50/30 to-cyan-50/50 dark:from-gray-900 dark:via-blue-900/30 dark:to-cyan-900/30 min-h-screen">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Page Header -->
-      <div class="text-center mb-12">
-        <h1 class="text-4xl font-bold bg-gradient-to-r from-secondary-800 to-primary-700 bg-clip-text text-transparent dark:from-white dark:to-primary-300 mb-6">
+      <!-- Enhanced Page Header -->
+      <div class="text-center mb-10 sm:mb-12 lg:mb-16">
+        <div class="inline-flex items-center bg-gradient-to-r from-green-100 to-blue-100 dark:from-green-900/30 dark:to-blue-900/30 rounded-full px-4 py-2 sm:px-6 sm:py-3 mb-4 sm:mb-6">
+          <span class="text-green-600 dark:text-green-400 text-sm sm:text-base font-semibold">📜 Terms & Conditions</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black bg-gradient-to-r from-gray-900 via-blue-800 to-cyan-700 dark:from-white dark:via-blue-300 dark:to-cyan-200 bg-clip-text text-transparent mb-4 sm:mb-6 leading-tight">
           Terms & Conditions
         </h1>
-        <p class="text-secondary-600 dark:text-secondary-300 text-xl">
-          Please read these terms carefully before using our services
+        <p class="text-gray-600 dark:text-gray-300 text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed px-4">
+          Please read these terms carefully before using <span class="font-semibold text-blue-600 dark:text-blue-400">MediCare Pro</span> services
         </p>
       </div>
 
-      <!-- Content -->
-      <div class="card-elegant prose max-w-none">
-        <div class="space-y-8">
-          <!-- Last Updated -->
-          <div class="bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 rounded-xl p-6">
-            <p class="text-sm text-secondary-600 dark:text-secondary-300 mb-0">
-              <strong>Last Updated:</strong> September 3, 2025
-            </p>
+      <!-- Enhanced Content -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+        <div class="p-6 sm:p-8 lg:p-10 space-y-8 sm:space-y-10">
+          <!-- Enhanced Last Updated -->
+          <div class="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-2xl p-4 sm:p-6 border border-green-200/50 dark:border-green-700/50">
+            <div class="flex items-center">
+              <div class="w-3 h-3 bg-green-500 rounded-full mr-3 animate-pulse"></div>
+              <p class="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-0 font-medium">
+                <strong>Last Updated:</strong> September 5, 2025
+              </p>
+            </div>
           </div>
 
           <!-- Acceptance -->
@@ -151,10 +157,13 @@
         </div>
       </div>
 
-      <!-- Back Button -->
-      <div class="text-center mt-12">
-        <button @click="$emit('navigate', 'home')" class="btn-secondary">
-          <span class="icon-arrow-left mr-2"></span>Back to Home
+      <!-- Enhanced Back Button -->
+      <div class="text-center mt-10 sm:mt-12">
+        <button @click="$emit('navigate', 'home')" class="inline-flex items-center bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 text-gray-700 dark:text-gray-300 hover:from-blue-50 hover:to-cyan-50 dark:hover:from-blue-900/30 dark:hover:to-cyan-900/30 hover:text-blue-600 dark:hover:text-blue-400 font-semibold py-3 px-6 sm:py-4 sm:px-8 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          Back to Home
         </button>
       </div>
     </div>
