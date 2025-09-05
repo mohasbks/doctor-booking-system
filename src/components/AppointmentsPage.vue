@@ -1,83 +1,131 @@
 <template>
-  <div class="py-12 bg-gradient-to-b from-secondary-50 to-white dark:from-secondary-900 dark:to-secondary-800 min-h-screen">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Page Header -->
-      <div class="text-center mb-12">
-        <h1 class="text-4xl font-bold bg-gradient-to-r from-secondary-800 to-primary-700 bg-clip-text text-transparent dark:from-white dark:to-primary-300 mb-6">
+  <div class="py-8 sm:py-12 lg:py-16 bg-gradient-to-br from-blue-50 via-white to-cyan-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900/20 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Enhanced Page Header -->
+      <div class="text-center mb-8 sm:mb-12 lg:mb-16">
+        <div class="inline-flex items-center bg-blue-100 dark:bg-blue-900/30 rounded-full px-4 py-2 sm:px-6 sm:py-3 mb-4 sm:mb-6">
+          <span class="text-blue-600 dark:text-blue-400 text-sm sm:text-base font-semibold">📅 Healthcare Management</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black bg-gradient-to-r from-gray-900 via-blue-800 to-cyan-700 dark:from-white dark:via-blue-300 dark:to-cyan-200 bg-clip-text text-transparent mb-4 sm:mb-6 leading-tight">
           My Appointments
         </h1>
-        <p class="text-secondary-600 dark:text-secondary-300 text-xl">
-          Manage your healthcare appointments
+        <p class="text-gray-600 dark:text-gray-300 text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed">
+          Track and manage your <span class="font-semibold text-blue-600 dark:text-blue-400">healthcare consultations</span> with ease
         </p>
+        
+        <!-- Stats Row -->
+        <div class="flex flex-wrap justify-center gap-4 sm:gap-8 mt-6 sm:mt-8">
+          <div class="text-center">
+            <div class="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400">{{ appointments.length }}</div>
+            <div class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Total Appointments</div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl sm:text-3xl font-bold text-green-600 dark:text-green-400">{{ confirmedCount }}</div>
+            <div class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Confirmed</div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl sm:text-3xl font-bold text-purple-600 dark:text-purple-400">{{ upcomingCount }}</div>
+            <div class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Upcoming</div>
+          </div>
+        </div>
       </div>
 
-      <!-- Appointments List -->
-      <div v-if="appointments && appointments.length > 0" class="space-y-6">
+      <!-- Enhanced Appointments List -->
+      <div v-if="appointments && appointments.length > 0" class="space-y-6 sm:space-y-8">
         <div v-for="(appointment, index) in appointments" :key="appointment.id" 
-             class="card-elegant group">
-          <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-            <!-- Doctor Info -->
-            <div class="flex items-center space-x-6">
+             class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl border border-gray-200/50 dark:border-gray-700/50 p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 group">
+          <div class="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-6 sm:gap-8">
+            <!-- Enhanced Doctor Info -->
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
               <div class="relative">
-                <img :src="appointment.doctorImage" :alt="appointment.doctorName" 
-                     class="w-20 h-20 rounded-xl object-cover shadow-lg transform group-hover:scale-105 transition-transform duration-300">
-                <div class="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-white dark:border-secondary-800 flex items-center justify-center">
-                  <span class="icon-check text-white text-xs"></span>
+                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-300">
+                  <img :src="appointment.doctorImage" :alt="appointment.doctorName" 
+                       class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                </div>
+                <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full border-3 border-white dark:border-gray-800 flex items-center justify-center shadow-lg">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
                 </div>
               </div>
-              <div>
-                <h3 class="text-xl font-bold text-secondary-800 dark:text-white mb-2">{{ appointment.doctorName }}</h3>
-                <p class="text-primary-600 dark:text-primary-400 font-semibold mb-1">{{ appointment.specialty }}</p>
-                <p class="text-secondary-600 dark:text-secondary-400 text-sm flex items-center">
-                  <span class="icon-location mr-1"></span>{{ appointment.location }}
-                </p>
+              <div class="text-center sm:text-left">
+                <h3 class="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{{ appointment.doctorName }}</h3>
+                <p class="text-blue-600 dark:text-blue-400 font-semibold text-base sm:text-lg mb-2">{{ appointment.specialty }}</p>
+                <div class="flex items-center justify-center sm:justify-start text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700/50 rounded-lg px-3 py-1">
+                  <svg class="w-4 h-4 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  </svg>
+                  <span class="text-sm font-medium">{{ appointment.location }}</span>
+                </div>
               </div>
             </div>
 
-            <!-- Appointment Details -->
+            <!-- Enhanced Appointment Details -->
             <div class="flex-1">
-              <div class="bg-gradient-to-br from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 rounded-xl p-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <p class="text-sm font-bold text-secondary-700 dark:text-secondary-300 mb-2">Date & Time</p>
-                    <p class="text-secondary-800 dark:text-white font-bold text-lg">
+              <div class="bg-gradient-to-br from-blue-50 via-white to-cyan-50 dark:from-blue-900/20 dark:via-gray-800/50 dark:to-cyan-900/20 rounded-2xl p-6 sm:p-8 border border-blue-100 dark:border-blue-800/30">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                  <div class="bg-white dark:bg-gray-700/50 rounded-xl p-4 shadow-sm">
+                    <div class="flex items-center mb-3">
+                      <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                      </svg>
+                      <p class="text-sm font-semibold text-gray-700 dark:text-gray-300">Date & Time</p>
+                    </div>
+                    <p class="text-gray-800 dark:text-white font-bold text-base sm:text-lg mb-1">
                       {{ formatDate(appointment.date) }}
                     </p>
-                    <p class="text-primary-600 dark:text-primary-400 font-semibold text-lg">
+                    <p class="text-blue-600 dark:text-blue-400 font-semibold text-base sm:text-lg">
                       {{ formatTime(appointment.time) }}
                     </p>
                   </div>
-                  <div>
-                    <p class="text-sm font-bold text-secondary-700 dark:text-secondary-300 mb-2">Status</p>
+                  <div class="bg-white dark:bg-gray-700/50 rounded-xl p-4 shadow-sm">
+                    <div class="flex items-center mb-3">
+                      <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                      <p class="text-sm font-semibold text-gray-700 dark:text-gray-300">Status</p>
+                    </div>
                     <span :class="getStatusClass(appointment.status)" class="inline-block px-4 py-2 rounded-xl text-sm font-bold shadow-sm">
                       {{ appointment.status.charAt(0).toUpperCase() + appointment.status.slice(1) }}
                     </span>
                   </div>
                 </div>
-                <div v-if="appointment.reason" class="mt-4 pt-4 border-t border-secondary-200 dark:border-secondary-600">
-                  <p class="text-sm font-bold text-secondary-700 dark:text-secondary-300 mb-2">Consultation Reason</p>
-                  <p class="text-secondary-600 dark:text-secondary-300">{{ appointment.reason }}</p>
-                </div>
-                <div class="mt-4 pt-4 border-t border-secondary-200 dark:border-secondary-600">
-                  <!-- Action Buttons -->
-                  <div class="flex flex-col sm:flex-row gap-3">
-                    <button v-if="appointment.status === 'confirmed'" 
-                            @click="rescheduleAppointment(appointment)"
-                            class="btn-secondary text-sm py-2 px-4">
-                      <span class="icon-calendar-alt mr-2"></span>Reschedule
-                    </button>
-                    
-                    <button v-if="appointment.status === 'confirmed'" 
-                            @click="showCancelModal(appointment)"
-                            class="bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 hover:bg-red-200 dark:hover:bg-red-800 text-sm font-semibold py-2 px-4 rounded-xl">
-                      <span class="icon-times mr-2"></span>Cancel
-                    </button>
-
-                    <button @click="viewAppointmentDetails(appointment)"
-                            class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800 text-sm font-semibold py-2 px-4 rounded-xl">
-                      <span class="icon-info mr-2"></span>Details
-                    </button>
+                
+                <div v-if="appointment.reason" class="bg-white dark:bg-gray-700/50 rounded-xl p-4 shadow-sm mb-6">
+                  <div class="flex items-center mb-3">
+                    <svg class="w-5 h-5 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    <p class="text-sm font-semibold text-gray-700 dark:text-gray-300">Consultation Reason</p>
                   </div>
+                  <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{{ appointment.reason }}</p>
+                </div>
+                
+                <!-- Enhanced Action Buttons -->
+                <div class="flex flex-wrap gap-3">
+                  <button v-if="appointment.status === 'confirmed'" 
+                          @click="rescheduleAppointment(appointment)"
+                          class="flex items-center bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-900/50 dark:to-cyan-900/50 text-blue-700 dark:text-blue-300 hover:from-blue-200 hover:to-cyan-200 dark:hover:from-blue-800/70 dark:hover:to-cyan-800/70 font-semibold py-3 px-4 rounded-xl transition-all duration-200 border border-blue-200 dark:border-blue-700">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>Reschedule
+                  </button>
+                  
+                  <button v-if="appointment.status === 'confirmed'" 
+                          @click="showCancelModal(appointment)"
+                          class="flex items-center bg-gradient-to-r from-red-100 to-pink-100 dark:from-red-900/50 dark:to-pink-900/50 text-red-700 dark:text-red-300 hover:from-red-200 hover:to-pink-200 dark:hover:from-red-800/70 dark:hover:to-pink-800/70 font-semibold py-3 px-4 rounded-xl transition-all duration-200 border border-red-200 dark:border-red-700">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>Cancel
+                  </button>
+
+                  <button @click="viewAppointmentDetails(appointment)"
+                          class="flex items-center bg-gradient-to-r from-gray-100 to-slate-100 dark:from-gray-700/50 dark:to-slate-700/50 text-gray-700 dark:text-gray-300 hover:from-gray-200 hover:to-slate-200 dark:hover:from-gray-600/70 dark:hover:to-slate-600/70 font-semibold py-3 px-4 rounded-xl transition-all duration-200 border border-gray-200 dark:border-gray-600">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>Details
+                  </button>
                 </div>
               </div>
             </div>
@@ -126,7 +174,7 @@
 </template>
 
 <script>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 
 export default {
   name: 'AppointmentsPage',
@@ -248,10 +296,21 @@ export default {
       loadAppointments()
     })
 
+    // Computed properties for stats
+    const confirmedCount = computed(() => 
+      appointments.value.filter(apt => apt.status === 'confirmed').length
+    )
+    
+    const upcomingCount = computed(() => 
+      appointments.value.filter(apt => isFutureAppointment(apt)).length
+    )
+
     return {
       appointments,
       appointmentToCancel,
       showCancelConfirmation,
+      confirmedCount,
+      upcomingCount,
       loadAppointments,
       formatDate,
       formatTime,
