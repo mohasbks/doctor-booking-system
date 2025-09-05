@@ -21,7 +21,7 @@
           <!-- Simplified Main Title Section -->
           <div class="space-y-6 sm:space-y-8">
             <div class="space-y-5 sm:space-y-6">
-              <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight min-h-[50px] sm:min-h-[70px] md:min-h-[90px] lg:min-h-[110px] break-words">
+              <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight min-h-[40px] sm:min-h-[60px] md:min-h-[80px] lg:min-h-[100px] break-words px-2">
                 <span class="text-white">Welcome to </span>
                 <span class="typewriter-text" data-text="MediCare Pro">
                   <span class="typewriter-cursor opacity-100 animate-pulse">|</span>
@@ -35,8 +35,8 @@
           </div>
           
           <!-- Simplified Description Section -->
-          <div class="max-w-3xl mx-auto">
-            <p class="text-lg sm:text-xl md:text-2xl text-blue-50 leading-relaxed text-center font-light">
+          <div class="max-w-2xl sm:max-w-3xl mx-auto px-4">
+            <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-50 leading-relaxed text-center font-light">
               Connect with top-tier medical specialists. Book appointments instantly and receive premium care anytime, anywhere.
             </p>
           </div>
